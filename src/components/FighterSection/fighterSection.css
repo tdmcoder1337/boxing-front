@@ -1,0 +1,302 @@
+.fighters {
+  background: #07090f;
+  padding: 58px 0;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.fighters__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: #fff;
+}
+
+.fighters__inner h2 {
+  margin: 0;
+  text-align: center;
+  font-size: 48px;
+  animation: fadeInUp 0.8s ease-out;
+  transition: all 0.3s ease;
+}
+
+.fighters__inner h2:hover {
+  color: #5568ff;
+}
+
+.fighters__inner > p {
+  margin: 14px auto 0;
+  text-align: center;
+  max-width: 600px;
+  color: #c2c8d8;
+  font-size: 13px;
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+  transition: color 0.3s ease;
+}
+
+.fighters__inner > p:hover {
+  color: #e0e5ff;
+}
+
+.fighters__cards {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.fighter-card {
+  display: block;
+  background: #0a0f1d;
+  border: 2px solid #3648d8;
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  animation: fadeInUp 0.8s ease-out;
+  animation-fill-mode: both;
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+}
+
+.fighter-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.fighter-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.fighter-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.fighter-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(52, 72, 207, 0.1) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.fighter-card:hover {
+  transform: translateY(-10px);
+  border-color: #5568ff;
+  box-shadow: 0 20px 50px rgba(52, 72, 207, 0.3);
+}
+
+.fighter-card:hover::before {
+  opacity: 1;
+}
+
+.fighter-card__image {
+  height: 235px;
+  background: #111722;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.fighter-card__image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(52, 72, 207, 0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.fighter-card:hover .fighter-card__image {
+  transform: scale(1.06);
+}
+
+.fighter-card:hover .fighter-card__image::before {
+  opacity: 1;
+}
+
+.fighter-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.4s ease;
+}
+
+.fighter-card:hover .fighter-card__image img {
+  filter: brightness(1.1);
+}
+
+.fighter-card__image-placeholder {
+  color: #7f8aa6;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.fighter-card h3 {
+  margin: 16px 10px 0;
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.fighter-card:hover h3 {
+  color: #5568ff;
+}
+
+.fighter-card__city {
+  display: block;
+  margin-top: 4px;
+  color: #cbd1e5;
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.fighter-card:hover .fighter-card__city {
+  color: #a8b4ff;
+}
+
+.fighter-card__meta {
+  margin-top: 14px;
+  background: #3848cf;
+  padding: 12px 12px 16px;
+  transition: all 0.3s ease;
+}
+
+.fighter-card:hover .fighter-card__meta {
+  background: #5568ff;
+  box-shadow: 0 0 15px rgba(52, 72, 207, 0.4);
+}
+
+.fighter-card__meta p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.fighter-card__chips {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.fighter-card__chips span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  background: #d8dde8;
+  color: #3848cf;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.fighter-card:hover .fighter-card__chips span {
+  transform: scale(1.05);
+  background: #e8ecff;
+  color: #5568ff;
+  box-shadow: 0 4px 12px rgba(52, 72, 207, 0.25);
+}
+
+.fighter-card__chips span:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(52, 72, 207, 0.35);
+}
+
+.fighters__cta {
+  display: block;
+  margin: 36px auto 0;
+  min-width: 294px;
+  border: 0;
+  background: #3b4bcd;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 18px 24px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.fighters__cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.fighters__cta:hover {
+  background: #5568ff;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(52, 72, 207, 0.35);
+}
+
+.fighters__cta:hover::before {
+  left: 100%;
+}
+
+.fighters__cta:active {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(52, 72, 207, 0.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .fighters__inner h2 {
+    font-size: 38px;
+  }
+
+  .fighters__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .fighter-card h3 {
+    font-size: 30px;
+  }
+
+  .fighter-card__city {
+    font-size: 20px;
+  }
+
+  .fighter-card__meta p {
+    font-size: 14px;
+  }
+
+  .fighters__cta {
+    min-width: 0;
+    width: 100%;
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,91 @@
+.fighter-profile-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #080d18 0%, #0d1320 100%);
+  color: #f2f4ff;
+}
+
+.fighter-profile {
+  padding: 24px 20px 64px;
+}
+
+.fighter-profile__container {
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+.fighter-profile__back {
+  border: 0;
+  background: transparent;
+  color: #c3cdf3;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.fighter-profile__card {
+  border: 1px solid rgba(121, 142, 255, 0.2);
+  border-radius: 22px;
+  background: rgba(9, 14, 28, 0.9);
+  padding: 22px;
+}
+
+.fighter-profile__hero {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.fighter-profile__hero img {
+  width: 90px;
+  height: 90px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.fighter-profile__hero h1 {
+  margin: 0;
+}
+
+.fighter-profile__hero p {
+  margin: 8px 0 4px;
+  color: #9fb0d8;
+}
+
+.fighter-profile__hero span {
+  color: #c8d1f3;
+}
+
+.fighter-profile__about {
+  margin: 18px 0 0;
+  color: #b6c2e3;
+  line-height: 1.7;
+}
+
+.fighter-profile__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.fighter-profile__chips span {
+  border-radius: 999px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.fighter-profile__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.fighter-profile__actions button {
+  min-height: 42px;
+  border: 0;
+  border-radius: 10px;
+  padding: 0 16px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #4f65ff;
+  color: #fff;
+}

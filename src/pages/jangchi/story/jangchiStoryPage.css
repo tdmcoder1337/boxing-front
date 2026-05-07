@@ -1,0 +1,246 @@
+.jangchi-story-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(57, 72, 181, 0.14), transparent 26%),
+    linear-gradient(180deg, #050608 0%, #0a0d14 58%, #07090f 100%);
+  color: #f3f6ff;
+}
+
+.jangchi-story__container {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.jangchi-story__breadcrumb {
+  padding: 18px 0 0;
+  color: #95a0bf;
+  font-size: 14px;
+}
+
+.jangchi-story__breadcrumb .jangchi-story__container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.jangchi-story__back,
+.jangchi-story__crumb-link,
+.jangchi-story__title-back {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #f5f7ff;
+  cursor: pointer;
+}
+
+.jangchi-story__back:hover,
+.jangchi-story__crumb-link:hover,
+.jangchi-story__title-back:hover {
+  color: #aebdff;
+}
+
+.jangchi-story__current {
+  color: #7f95ff;
+}
+
+.jangchi-story__hero {
+  padding: 14px 0 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.jangchi-story__title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.jangchi-story__title-row h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.jangchi-story__title-back {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.jangchi-story__profile-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 0 10px;
+}
+
+.jangchi-story__profile-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.jangchi-story__avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #6e7a97;
+  flex-shrink: 0;
+}
+
+.jangchi-story__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.jangchi-story__profile-copy {
+  max-width: 760px;
+}
+
+.jangchi-story__name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.jangchi-story__name-row h2 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.jangchi-story__name-row span {
+  color: #b8c3df;
+  font-size: 14px;
+}
+
+.jangchi-story__meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.jangchi-story__meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #eef2ff;
+  font-size: 13px;
+}
+
+.jangchi-story__profile-copy p {
+  margin: 16px 0 0;
+  color: #9dabc8;
+  line-height: 1.7;
+}
+
+.jangchi-story__cta {
+  min-width: 150px;
+  height: 46px;
+  border: 0;
+  border-radius: 10px;
+  background: #4259ff;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 16px 26px rgba(56, 79, 217, 0.24);
+}
+
+.jangchi-story__content {
+  padding: 28px 0 64px;
+}
+
+.jangchi-story__content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 360px);
+  gap: 32px;
+  align-items: start;
+}
+
+.jangchi-story__text {
+  display: grid;
+  gap: 22px;
+}
+
+.jangchi-story__text p {
+  margin: 0;
+  color: #f3f6ff;
+  line-height: 1.9;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.jangchi-story__image-card {
+  position: sticky;
+  top: 24px;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(127, 149, 255, 0.18);
+  background: #111624;
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.24);
+}
+
+.jangchi-story__image-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.jangchi-story__image-overlay {
+  display: grid;
+  gap: 4px;
+  padding: 16px 18px 18px;
+  background: linear-gradient(180deg, rgba(10, 14, 22, 0.1), rgba(10, 14, 22, 0.95));
+}
+
+.jangchi-story__image-overlay strong {
+  font-size: 18px;
+}
+
+.jangchi-story__image-overlay span {
+  color: #aeb8cf;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .jangchi-story__profile-card,
+  .jangchi-story__content-grid {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .jangchi-story__cta {
+    width: 100%;
+  }
+
+  .jangchi-story__image-card {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .jangchi-story__container {
+    padding: 0 16px;
+  }
+
+  .jangchi-story__profile-main,
+  .jangchi-story__name-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .jangchi-story__title-row h1,
+  .jangchi-story__name-row h2 {
+    font-size: 26px;
+  }
+}

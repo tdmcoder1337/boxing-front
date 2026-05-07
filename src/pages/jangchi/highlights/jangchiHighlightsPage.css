@@ -1,0 +1,290 @@
+.jangchi-highlights-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(52, 80, 255, 0.14), transparent 28%),
+    linear-gradient(180deg, #050608 0%, #0b0e14 55%, #080a0f 100%);
+  color: #f4f6fb;
+}
+
+.jangchi-highlights__container {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.jangchi-highlights__breadcrumb {
+  padding: 18px 0 0;
+  color: #95a0bf;
+  font-size: 14px;
+}
+
+.jangchi-highlights__breadcrumb .jangchi-highlights__container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.jangchi-highlights__back {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #f5f7ff;
+  cursor: pointer;
+}
+
+.jangchi-highlights__crumb-link {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #f5f7ff;
+  cursor: pointer;
+}
+
+.jangchi-highlights__crumb-link:hover,
+.jangchi-highlights__back:hover {
+  color: #aebdff;
+}
+
+.jangchi-highlights__current {
+  color: #7f95ff;
+}
+
+.jangchi-highlights__hero {
+  padding: 20px 0 32px;
+}
+
+.jangchi-highlights__eyebrow {
+  margin: 0 0 18px;
+  color: #8d98b8;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.jangchi-highlights__hero-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px;
+  border: 1px solid rgba(127, 149, 255, 0.14);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(19, 23, 35, 0.97), rgba(9, 12, 18, 0.94)),
+    #0c1018;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.3);
+}
+
+.jangchi-highlights__hero-main {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.jangchi-highlights__avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #21293d;
+  flex-shrink: 0;
+}
+
+.jangchi-highlights__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.jangchi-highlights__hero-copy h1 {
+  margin: 0;
+  font-size: clamp(30px, 4vw, 46px);
+}
+
+.jangchi-highlights__hero-copy h2 {
+  margin: 8px 0 6px;
+  font-size: 24px;
+}
+
+.jangchi-highlights__hero-copy p {
+  margin: 0;
+  color: #aab6d3;
+  line-height: 1.6;
+}
+
+.jangchi-highlights__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.jangchi-highlights__meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #edf2ff;
+  font-size: 13px;
+}
+
+.jangchi-highlights__cta {
+  min-width: 146px;
+  height: 48px;
+  border: 0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #4f67ff, #324cff);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 18px 32px rgba(50, 76, 255, 0.3);
+}
+
+.jangchi-highlights__intro {
+  max-width: 820px;
+  margin: 18px 0 0;
+  color: #afb9d1;
+  line-height: 1.8;
+}
+
+.jangchi-highlights__content {
+  padding: 8px 0 64px;
+}
+
+.jangchi-highlights__list {
+  display: grid;
+  gap: 32px;
+}
+
+.jangchi-highlights__card {
+  padding: 24px;
+  border: 1px solid rgba(127, 149, 255, 0.14);
+  border-radius: 24px;
+  background: rgba(10, 13, 20, 0.94);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+.jangchi-highlights__card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.jangchi-highlights__label {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #8ea0d9;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.jangchi-highlights__card h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.jangchi-highlights__tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(66, 89, 255, 0.16);
+  color: #cad5ff;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.jangchi-highlights__description {
+  margin: 0 0 18px;
+  color: #aeb8cf;
+  line-height: 1.7;
+}
+
+.jangchi-highlights__media {
+  overflow: hidden;
+  border-radius: 18px;
+  background: #090b10;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.jangchi-highlights__image,
+.jangchi-highlights__video {
+  display: block;
+  width: 100%;
+  max-height: 440px;
+  object-fit: cover;
+}
+
+.jangchi-highlights__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 16px;
+  color: #92a0c2;
+}
+
+.jangchi-highlights__actions button {
+  min-width: 190px;
+  height: 42px;
+  border: 1px solid rgba(127, 149, 255, 0.16);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #f2f5ff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.jangchi-highlights__empty {
+  padding: 40px 24px;
+  border: 1px dashed rgba(127, 149, 255, 0.24);
+  border-radius: 24px;
+  background: rgba(10, 13, 20, 0.8);
+  text-align: center;
+}
+
+.jangchi-highlights__empty h3 {
+  margin: 0 0 10px;
+}
+
+.jangchi-highlights__empty p {
+  margin: 0;
+  color: #aeb8cf;
+}
+
+@media (max-width: 900px) {
+  .jangchi-highlights__hero-card,
+  .jangchi-highlights__actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .jangchi-highlights__cta,
+  .jangchi-highlights__actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .jangchi-highlights__container {
+    padding: 0 16px;
+  }
+
+  .jangchi-highlights__hero-card,
+  .jangchi-highlights__card {
+    padding: 20px;
+  }
+
+  .jangchi-highlights__hero-main,
+  .jangchi-highlights__card-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,238 @@
+/* ==================== Global Animations ==================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(52, 72, 207, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(52, 72, 207, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(52, 72, 207, 0.3);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* ==================== Home Page Styles ==================== */
+.home-page {
+  background: #07090f;
+  overflow-x: hidden;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==================== Component Animations ==================== */
+
+/* Hero section animation */
+.hero {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero__left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.hero__visual {
+  animation: slideInRight 0.8s ease-out;
+}
+
+/* Section fade-in on viewport */
+.fighters,
+.newsletter-section,
+.footer {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* ==================== Button Hover Effects ==================== */
+.hero__btn,
+.fighters__cta,
+.newsletter__btn,
+button {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+}
+
+.hero__btn:hover,
+.fighters__cta:hover,
+.newsletter__btn:hover,
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(52, 72, 207, 0.4);
+}
+
+.hero__btn:active,
+.fighters__cta:active,
+.newsletter__btn:active,
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 15px rgba(52, 72, 207, 0.3);
+}
+
+/* ==================== Card Hover Effects ==================== */
+.fighter-card {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+
+.fighter-card:hover {
+  transform: translateY(-8px);
+  border-color: #5568ff;
+  box-shadow: 0 20px 40px rgba(52, 72, 207, 0.25);
+}
+
+.fighter-card__image {
+  transition: transform 0.4s ease-out;
+  position: relative;
+}
+
+.fighter-card:hover .fighter-card__image {
+  transform: scale(1.05);
+}
+
+.fighter-card__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(52, 72, 207, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.fighter-card:hover .fighter-card__image::after {
+  opacity: 1;
+}
+
+/* ==================== Text Link Effects ==================== */
+a {
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #5568ff;
+}
+
+/* ==================== Newsletter Section ==================== */
+.newsletter-section {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.newsletter__btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter__btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.newsletter__btn:hover::before {
+  left: 100%;
+}
+
+/* ==================== Navbar Styles ==================== */
+.navbar {
+  transition: all 0.3s ease;
+}
+
+.navbar:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================== Footer Hover ==================== */
+.footer a {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #5568ff;
+  transition: width 0.3s ease;
+}
+
+.footer a:hover::after {
+  width: 100%;
+}
+
+/* ==================== Loading States ==================== */
+.loading {
+  animation: pulse 1.5s infinite;
+}
+
+/* ==================== Focus States for Accessibility ==================== */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #5568ff;
+  outline-offset: 2px;
+}
+
+/* ==================== Smooth Transitions for Layout Changes ==================== */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}

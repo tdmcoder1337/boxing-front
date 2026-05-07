@@ -1,0 +1,630 @@
+.jangchi-directory {
+  padding: 10px 20px 76px;
+}
+
+.jangchi-directory__inner {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.jangchi-directory__toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) auto;
+  gap: 18px;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 24px;
+  background: rgba(12, 15, 25, 0.72);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
+  animation: jangchiFadeUp 0.75s ease-out both;
+}
+
+.jangchi-directory__search-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.jangchi-directory__field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 52px;
+  padding: 0 16px;
+  border: 1px solid rgba(134, 150, 255, 0.12);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(117, 129, 175, 0.18), rgba(72, 80, 113, 0.12));
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.jangchi-directory__field:hover,
+.jangchi-directory__field:focus-within {
+  transform: translateY(-2px);
+  border-color: rgba(127, 149, 255, 0.35);
+  box-shadow: 0 14px 28px rgba(40, 58, 165, 0.18);
+}
+
+.jangchi-directory__field-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #dce3ff;
+  font-size: 11px;
+  font-weight: 700;
+  flex: 0 0 20px;
+}
+
+.jangchi-directory__field input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #f5f7ff;
+  font-size: 14px;
+}
+
+.jangchi-directory__field input:focus {
+  outline: none;
+}
+
+.jangchi-directory__field input::placeholder {
+  color: #9aa7c8;
+}
+
+.jangchi-directory__filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.jangchi-directory__switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 16px 0 12px;
+  border: 1px solid rgba(127, 149, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(16, 21, 34, 0.84);
+  color: #dce3ff;
+  cursor: pointer;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.jangchi-directory__switch:hover {
+  transform: translateY(-2px);
+  border-color: rgba(127, 149, 255, 0.38);
+  box-shadow: 0 14px 28px rgba(40, 58, 165, 0.16);
+}
+
+.jangchi-directory__switch-thumb {
+  width: 38px;
+  height: 22px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  position: relative;
+  transition: background 0.28s ease;
+}
+
+.jangchi-directory__switch-thumb::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  transition: transform 0.28s ease;
+}
+
+.jangchi-directory__switch.is-active .jangchi-directory__switch-thumb {
+  background: #4d63ff;
+}
+
+.jangchi-directory__switch.is-active .jangchi-directory__switch-thumb::after {
+  transform: translateX(16px);
+}
+
+.jangchi-directory__select {
+  display: inline-flex;
+  min-height: 52px;
+  padding: 0;
+  border: 1px solid rgba(127, 149, 255, 0.12);
+  border-radius: 14px;
+  background: rgba(16, 21, 34, 0.84);
+  color: #dce3ff;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: visible;
+}
+
+.jangchi-directory__select-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 38px 0 14px;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.jangchi-directory__select:hover,
+.jangchi-directory__select.is-open {
+  transform: translateY(-2px);
+  border-color: rgba(127, 149, 255, 0.35);
+  box-shadow: 0 8px 20px rgba(40, 58, 165, 0.2);
+  background: rgba(16, 21, 34, 0.9);
+  z-index: 30;
+}
+
+.jangchi-directory__select::after {
+  content: '▾';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #5568ff;
+  font-size: 18px;
+  font-weight: bold;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
+  line-height: 1;
+}
+
+.jangchi-directory__select:hover::after,
+.jangchi-directory__select.is-open::after {
+  color: #7fbfff;
+  transform: translateY(-50%) scale(1.3);
+  text-shadow: 0 0 12px rgba(85, 104, 255, 0.8);
+  opacity: 1;
+}
+
+.jangchi-directory__select.is-open::after {
+  transform: translateY(-50%) scale(1.3) rotate(180deg);
+}
+
+.jangchi-directory__select span {
+  font-size: 13px;
+  color: #b5bfd8;
+  transition: color 0.3s ease;
+}
+
+.jangchi-directory__select-trigger:focus-visible {
+  outline: 2px solid rgba(127, 149, 255, 0.55);
+  outline-offset: 2px;
+}
+
+.jangchi-directory__select:hover span,
+.jangchi-directory__select.is-open span {
+  color: #e0e5ff;
+}
+
+.jangchi-directory__select-value {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  text-align: left;
+}
+
+.jangchi-directory__select:hover .jangchi-directory__select-value,
+.jangchi-directory__select.is-open .jangchi-directory__select-value {
+  color: #e0e5ff;
+  text-shadow: 0 0 5px rgba(85, 104, 255, 0.3);
+}
+
+.jangchi-directory__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(16, 21, 34, 0.98);
+  border: 1px solid rgba(127, 149, 255, 0.3);
+  border-top: none;
+  border-radius: 0 0 14px 14px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-5px);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 10;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.jangchi-directory__select.is-open .jangchi-directory__dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  max-height: 210px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  z-index: 40;
+}
+
+/* Custom scrollbar for dropdown - more visible */
+.jangchi-directory__select.is-open .jangchi-directory__dropdown::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.jangchi-directory__select.is-open .jangchi-directory__dropdown::-webkit-scrollbar-track {
+  background: rgba(127, 149, 255, 0.15);
+  border-radius: 4px;
+  margin: 2px;
+}
+
+.jangchi-directory__select.is-open .jangchi-directory__dropdown::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(85, 104, 255, 0.8), rgba(127, 149, 255, 0.6));
+  border-radius: 4px;
+  border: 1px solid rgba(127, 149, 255, 0.2);
+}
+
+.jangchi-directory__select.is-open .jangchi-directory__dropdown::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(85, 104, 255, 0.9), rgba(127, 149, 255, 0.7));
+}
+
+.jangchi-directory__select.is-open .jangchi-directory__dropdown::-webkit-scrollbar-corner {
+  background: rgba(127, 149, 255, 0.1);
+}
+
+.jangchi-directory__dropdown-item {
+  width: 100%;
+  padding: 14px 16px;
+  border: 0;
+  background: transparent;
+  color: #c9cdd7;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-bottom: 1px solid rgba(127, 149, 255, 0.15);
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.jangchi-directory__dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.jangchi-directory__dropdown-item:hover {
+  background: linear-gradient(90deg, rgba(127, 149, 255, 0.15) 0%, rgba(127, 149, 255, 0.25) 100%);
+  color: #ffffff;
+  padding-left: 20px;
+  transform: translateX(2px);
+}
+
+.jangchi-directory__dropdown-item.is-selected {
+  background: linear-gradient(90deg, rgba(85, 104, 255, 0.25) 0%, rgba(85, 104, 255, 0.35) 100%);
+  color: #5568ff;
+  font-weight: 600;
+  border-left: 3px solid #5568ff;
+}
+
+.jangchi-directory__dropdown-item.is-selected:hover {
+  background: linear-gradient(90deg, rgba(85, 104, 255, 0.35) 0%, rgba(85, 104, 255, 0.45) 100%);
+}
+
+.jangchi-directory__heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.jangchi-directory__heading h2 {
+  margin: 0;
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.jangchi-directory__heading p {
+  margin: 8px 0 0;
+  color: #98a4c7;
+  font-size: 14px;
+}
+
+.jangchi-directory__meta {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(127, 149, 255, 0.18);
+  background: rgba(18, 23, 37, 0.84);
+  color: #c3ceeb;
+  font-size: 13px;
+}
+
+.jangchi-directory__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 22px;
+  margin-top: 22px;
+  max-height: 800px;
+  overflow-y: auto;
+  padding-right: 10px;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for grid */
+.jangchi-directory__grid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.jangchi-directory__grid::-webkit-scrollbar-track {
+  background: rgba(127, 149, 255, 0.1);
+  border-radius: 4px;
+}
+
+.jangchi-directory__grid::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(85, 104, 255, 0.6), rgba(127, 149, 255, 0.4));
+  border-radius: 4px;
+}
+
+.jangchi-directory__grid::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(85, 104, 255, 0.8), rgba(127, 149, 255, 0.6));
+}
+
+/* Firefox scrollbar for grid */
+.jangchi-directory__grid {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(85, 104, 255, 0.6) rgba(127, 149, 255, 0.1);
+}
+
+.jangchi-card {
+  display: block;
+  border: 1px solid rgba(72, 95, 255, 0.6);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(13, 16, 27, 0.96), rgba(17, 21, 35, 0.92));
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.26);
+  transition: transform 0.34s ease, box-shadow 0.34s ease, border-color 0.34s ease;
+  animation: jangchiFadeUp 0.7s ease-out both;
+  color: inherit;
+  text-decoration: none;
+}
+
+.jangchi-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(104, 126, 255, 0.92);
+  box-shadow: 0 30px 60px rgba(40, 58, 165, 0.28);
+}
+
+.jangchi-card__image-wrap {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.1), transparent 55%), #11141e;
+}
+
+.jangchi-card__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.jangchi-card:hover .jangchi-card__image-wrap img {
+  transform: scale(1.06);
+  filter: saturate(1.08);
+}
+
+.jangchi-card__category {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(11, 16, 27, 0.82);
+  border: 1px solid rgba(127, 149, 255, 0.25);
+  color: #edf1ff;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.jangchi-card__body {
+  padding: 18px 18px 20px;
+}
+
+.jangchi-card__body h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 25px;
+  line-height: 1.15;
+}
+
+.jangchi-card__location {
+  display: block;
+  margin-top: 8px;
+  color: #b4bfd9;
+  font-size: 13px;
+}
+
+.jangchi-card__body p {
+  min-height: 44px;
+  margin: 16px 0 0;
+  color: #f0f3ff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.jangchi-card__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.jangchi-card__chips span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: #4259ff;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  transition: transform 0.28s ease, background 0.28s ease;
+}
+
+.jangchi-card__chips span:last-child {
+  background: rgba(255, 255, 255, 0.08);
+  color: #dce3ff;
+}
+
+.jangchi-card:hover .jangchi-card__chips span {
+  transform: translateY(-2px);
+}
+
+.jangchi-directory__empty {
+  margin-top: 24px;
+  padding: 32px 24px;
+  border: 1px dashed rgba(127, 149, 255, 0.22);
+  border-radius: 22px;
+  background: rgba(17, 21, 35, 0.76);
+  text-align: center;
+}
+
+.jangchi-directory__empty h3 {
+  margin: 0;
+  color: #ffffff;
+}
+
+.jangchi-directory__empty p {
+  margin: 10px 0 0;
+  color: #a7b2d2;
+}
+
+.jangchi-directory__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.jangchi-directory__footer p {
+  margin: 0;
+  color: #98a4c7;
+  font-size: 12px;
+}
+
+.jangchi-directory__pager {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.jangchi-directory__pager button,
+.jangchi-directory__pager span {
+  min-width: 42px;
+  height: 34px;
+  padding: 0 14px;
+  border: 1px solid rgba(127, 149, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(14, 19, 30, 0.88);
+  color: #dce3ff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.jangchi-directory__pager button {
+  cursor: pointer;
+  transition: transform 0.28s ease, border-color 0.28s ease;
+}
+
+.jangchi-directory__pager button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: rgba(127, 149, 255, 0.34);
+}
+
+.jangchi-directory__pager button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.jangchi-directory__pager .is-current {
+  background: #4259ff;
+  color: #ffffff;
+  border-color: transparent;
+}
+
+@keyframes jangchiFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1050px) {
+  .jangchi-directory__toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .jangchi-directory__filters {
+    justify-content: flex-start;
+  }
+
+  .jangchi-directory__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .jangchi-directory {
+    padding: 10px 16px 56px;
+  }
+
+  .jangchi-directory__search-row {
+    grid-template-columns: 1fr;
+  }
+
+  .jangchi-directory__heading,
+  .jangchi-directory__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .jangchi-directory__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .jangchi-card__image-wrap {
+    height: 260px;
+  }
+}

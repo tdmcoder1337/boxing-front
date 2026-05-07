@@ -1,0 +1,49 @@
+.jangchi-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(57, 72, 181, 0.18), transparent 28%),
+    linear-gradient(180deg, #07090f 0%, #0d111b 100%);
+  color: #f4f7fb;
+}
+
+.jangchi-breadcrumb {
+  padding: 20px 20px 0;
+}
+
+.jangchi-breadcrumb__inner {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #aeb8cf;
+  font-size: 15px;
+}
+
+
+.jangchi-breadcrumb__link {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #f5f7ff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.jangchi-breadcrumb__link:hover {
+  color: #7f95ff;
+}
+
+.jangchi-breadcrumb__current {
+  color: #7f95ff;
+}
+
+@media (max-width: 768px) {
+  .jangchi-breadcrumb {
+    padding: 16px 16px 0;
+  }
+
+  .jangchi-breadcrumb__inner {
+    font-size: 14px;
+  }
+}
